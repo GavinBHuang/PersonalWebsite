@@ -1,47 +1,90 @@
 body{
-    background-color:lime;
+    text-align: center;
+    font-family: geist pixel;
 }
 
-p1 {
+body {
+  background-image: linear-gradient(to right, #b7ed8c, #e5ae84 100%); 
+  height: 400px;
+}
+
+h1, h3, h4{
+    color: var(--textcolor);
+}
+
+h2 {
+    color: var(--textcolor2);
+}
+
+p1, p2, p3, p4, p5 {
     font-size: 20px;
+}
+
+h4 {
+    margin-top: 60px;
 }
 
 figcaption {
     font-size: 18px;
 }
 
-h3 {
+h1 {
+    font-size: 35px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3, h4 {
     font-size: 25px;
 }
 
-p2 {
-    font-size: 20px;
-}
-
-p3 {
-    font-size: 20px;
-}
-
-p4 {
-    font-size: 20px;
-}
-
-p5 {
-    font-size: 20px;
-}
-
-ol1 {
-    font-size: 22px;
-}
-
-ol2 {
-    font-size: 22px;
-}
-
-ol3 {
+ol1, ol2, ol3 {
     font-size: 22px;
 }
 
 a {
-    font-size: 20px;
+    font-size: 22px;
+}
+
+.curve {
+    border-radius: 25px;
+    border: 5px solid transparent;
+    background:
+        linear-gradient(#fffac7, #c9babd) padding-box,
+        linear-gradient(to top, #D18585, #aae8c7 100%) border-box;
+        padding: 1.75px;
+    margin-bottom: 5px;
+}
+
+:root {
+    --textcolor: rgb(255, 247, 194);
+    --textcolor2: rgb(255, 228, 240);
+}
+
+@keyframes expandingtext{
+    0% {transform: scale(1);}
+    20% {transform: scale(1.05);}
+    40% {transform: scale(1.1);}
+    60% {transform: scale(1.1);}
+    80% {transform: scale(1.05);}
+    100% {transform: scale(1);}
+}  
+
+.expandingtext {
+    animation: expandingtext 5s ease-in-out infinite;
+}
+
+@keyframes tiltingtext {
+    0% {transform: rotate(0deg);}
+    20% {transform: rotate(5deg);}
+    40% {transform: rotate(-5deg);}
+    60% {transform: rotate(5deg);}
+    80% {transform: rotate(-5deg);}
+    100% {transform: rotate(0deg);}
+}  
+
+.tiltingtext {
+    animation: tiltingtext 5s ease-in-out infinite;
 }
