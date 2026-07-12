@@ -12,7 +12,12 @@ h1, h3, h4{
     color: var(--textcolor);
 }
 
-h2 {
+h5 {
+    font-size: 50px;
+    margin-top: 10px;
+}
+
+h2, h5 {
     color: var(--textcolor2);
 }
 
@@ -46,6 +51,23 @@ ol1, ol2, ol3 {
 
 a {
     font-size: 22px;
+}
+
+h1, h2, h3, h4, p, a, img, figcaption {
+    position: relative;
+    z-index: 2;
+}
+
+.page-content {
+    position: relative;
+    z-index: 1;
+}
+
+.rain-container {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
 }
 
 .curve {
@@ -87,4 +109,46 @@ a {
 
 .tiltingtext {
     animation: tiltingtext 5s ease-in-out infinite;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.raindrop {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: url("Watermelon-Rain.png") center/cover no-repeat;
+    animation: fall linear infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+button {
+    width: 300px;
+    height: 150px;
+    border-radius: 25px;
+    border: 5px solid transparent;
+    background:
+        linear-gradient(#fffac7, #c9babd) padding-box,
+        linear-gradient(to top, #D18585, #aae8c7 100%) border-box;
+        padding: 1.75px;
+    margin-top: 25px;
+    font-size: 30px;
+    font-weight: bold;
 }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Watermelon Test!!!</title>
+        <link rel="icon" type="image/x-icon" href="Blackhole.gif">
+
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                position: relative;
+            }
+
+            .raindrop {
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                background: url("Watermelon-Rain.png") center/cover no-repeat;
+                animation: fall linear infinite;
+            }
+            
+            @keyframes fall {
+                0% {
+                    transform: translateY(-10px);
+                }
+                100% {
+                    transform: translateY(100vh);
+                }
+            }
+            
+            .text {
+                position: fixed;
+                color: rgb(1, 0, 0);
+                font-size: 2rem;
+                font-family: Arial, sans-serif;
+                text-align: center;
+                font-weight: 600px;
+                z-index: 1;
+                text-shadow: 0 0 2px, 0 0 10px #ff0000;
+            }
+        </style>
+    </head> 
+    <body>
+
+        <div class="text">Rainfall</div>
+
+        <script>
+
+            function createRaindrop() {
+                const raindrop = document.createElement('div');
+                raindrop.classList.add('raindrop');
+
+                raindrop.style.left = Math.random() * window.innerWidth + 'px';
+
+                raindrop.style.animationDuration = (Math.random() * 1 + 0.5) + 's'; // Random duration between 0.5s and 1.5s
+                document.body.appendChild(raindrop);
+
+                // Remove the raindrop after it falls
+                setTimeout(() => {
+                    raindrop.remove();
+                }, 1500); // Match the maximum animation duration
+            } 
+            
+            setInterval(createRaindrop, 50);
+        </script>
+    </body>
+</html>
